@@ -1,0 +1,13 @@
+replication:
+  replSetName: intelivix
+security:
+  keyFile: /etc/mongodb/ssl/keyfile
+net:
+  port: 27017
+  ssl:
+    mode: preferSSL
+    PEMKeyFile: /etc/mongodb/ssl/mongodb.pem
+    CAFile: /etc/mongodb/ssl/ca.pem
+    allowConnectionsWithoutCertificates: true
+security:
+  authorization: enabled

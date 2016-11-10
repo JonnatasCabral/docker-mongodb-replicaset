@@ -1,0 +1,31 @@
+
+version: '2'
+services:
+
+  mongo1:
+    image: registry.intelivix.com/base/mongodb
+    restart: always
+    build: .
+    command: -f /etc/mongodb/config.yml
+    ports:
+      - 3001:27017
+    volumes:
+      - /mnt/volume/mongo1/:/data/db/
+
+  mongo2:
+    image: registry.intelivix.com/base/mongodb
+    restart: always
+    command: -f /etc/mongodb/config.yml
+    ports:
+      - 3002:27017
+    volumes:
+      - /mnt/volume/mongo2/:/data/db/
+
+  mongo3:
+    image: registry.intelivix.com/base/mongodb
+    restart: always
+    command: -f /etc/mongodb/config.yml
+    ports:
+      - 3003:27017
+    volumes:
+      - /mnt/volume/mongo3/:/data/db/
