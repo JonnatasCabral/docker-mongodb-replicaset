@@ -1,5 +1,5 @@
 replication:
-  replSetName: intelivix
+  replSetName: mongodb-raidSet
 security:
   keyFile: /etc/mongodb/ssl/keyfile
 net:

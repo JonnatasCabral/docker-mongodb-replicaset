@@ -3,7 +3,7 @@ version: '2'
 services:
 
   mongo1:
-    image: registry.intelivix.com/base/mongodb
+    image: mongodb
     restart: always
     build: .
     command: -f /etc/mongodb/config.yml
@@ -13,7 +13,7 @@ services:
       - /mnt/volume/mongo1/:/data/db/
 
   mongo2:
-    image: registry.intelivix.com/base/mongodb
+    image: mongodb
     restart: always
     command: -f /etc/mongodb/config.yml
     ports:
@@ -22,7 +22,7 @@ services:
       - /mnt/volume/mongo2/:/data/db/
 
   mongo3:
-    image: registry.intelivix.com/base/mongodb
+    image: mongodb
     restart: always
     command: -f /etc/mongodb/config.yml
     ports:
