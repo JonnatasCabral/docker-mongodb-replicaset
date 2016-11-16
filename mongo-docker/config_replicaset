@@ -1,19 +1,20 @@
-db.createUser({user: "adminmongo", pwd: "adminmongo@2016", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]})
-db.createUser({user: "usermongo", pwd: "usermongo@2016", roles: [ { "role" : "clusterAdmin", "db" : "admin" } ]})
+docker-compose exec mongo1 mongo
+db.createUser({user: "adminmongo", pwd: "admin@2016", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]})
+db.createUser({user: "user", pwd: "user@2016", roles: [ { "role" : "clusterAdmin", "db" : "admin" } ]})
 rs.initiate({
 	"_id" : "mongodb-raidSet",
 	"members" : [
 		{
 			"_id" : 0,
-			"host" : "mongodb1:3001"
+			"host" : "mongo1:27017"
 		},
 		{
 			"_id" : 1,
-			"host" : "mongodb2:3002"
+			"host" : "mongo2:27017"
 		},
 		{
 			"_id" : 2,
-			"host" : "mongodb3:3003"
+			"host" : "mongo3:27017"
 		}
 	]
 })

@@ -10,4 +10,4 @@ net:
     CAFile: /etc/mongodb/ssl/ca.pem
     allowConnectionsWithoutCertificates: true
 security:
-  authorization: enabled
+  authorization: disabled
